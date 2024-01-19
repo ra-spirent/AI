@@ -4,15 +4,10 @@ import time
 from openai import OpenAI
 
 # Set your OpenAI API key
-client=OpenAI(api_key='***************')
+client=OpenAI(api_key='**********')
 
 
 
-assistant = client.beta.assistants.create(
-    name="Spirent AnswerGPT",
-    instructions="Answer questions about Spirent products",
-    model="gpt-4-1106-preview"
-)
 
 thread = client.beta.threads.create()
 
@@ -28,7 +23,7 @@ print("Prompt: " + message.content[0].text.value)
 
 run = client.beta.threads.runs.create(
   thread_id=thread.id,
-  assistant_id="*************",
+  assistant_id="********",
 )
 
 status="queued"
